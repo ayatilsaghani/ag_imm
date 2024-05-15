@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.container img {
+    height: 500px;
+    width: 500px;
+    padding: 20px;
+}
+
+.container h1 {
+    color: #333;
+    margin: 10px 0;
+}
+
+.container p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.container a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container a:hover {
+    color: #007BFF;
+}

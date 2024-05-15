@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="icon" href="logo.png">
+   <link rel="stylesheet" href="inup.css">
+</head>
+<body>
+    <div class="container">
+        <img src="417a7bee-b837-4aab-9c3f-4cdff389d034.jpg" alt="Notebook" style="width:100%;">
+      <center>  <div class="content">
+            <center><img src="logo.png" style="margin-top: 40px; margin-right: 80px;" width="120px" height="130px"></center>
+            <div class="carre1">
+                <div style="font-size: 40px;">Sign Up</div>
+                <br>
+                <input type="text" id="in1" placeholder="Enter your name"><br>
+                <input type="text" id="in2" placeholder="Enter a password"><br>
+                <input type="email" id="mail" placeholder="Enter your mail"><br>
+                <input type="password" id="in4" placeholder="Enter your password" style="color: #f1f1f1;"><br>
+                <input type="checkbox" onclick="showPass()"> Show password <br><br>
+                <span id="s1" style="color: red;"></span>
+                <center> <a href="home.html"><button class="button button1" onclick="add()">sign</button></a></center>   
+            </div>
+        </div></center>
+    </div>
+   
+    <script>
+        var users = [];
+
+        function add() {
+            var userNameValue = document.getElementById('in1').value;
+            var passValue = document.getElementById('in2').value;
+
+            if (passValue.length < 8) {
+                document.getElementById('s1').innerHTML = 'password doit avoir au minimum 8 caracteres';
+            } else {
+                var user = {
+                    username: userNameValue,
+                    password: passValue
+                };
+                users.push(user);
+                console.log(users);
+            }
+        }
+    </script>
+</body>
+</html>

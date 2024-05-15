@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="icon" href="logo.png">
+   <link rel="stylesheet" href="inup.css">
+</head>
+<body>
+    <div class="container">
+        <img src="417a7bee-b837-4aab-9c3f-4cdff389d034.jpg" alt="Notebook" style="width:100%;">
+      <center>  <div class="content">
+            <center><img src="logo.png" style="margin-top: 40px; margin-right: 80px;" width="120px" height="130px"></center>
+            <div class="carre1">
+    
+                <form action="C:\Users\aya\Desktop\agence immobilier\home.html" onsubmit="return Signin()">
+                    <div style="font-size: 40px;">Sign In</div><br>
+                    <input type="text" id="in3" placeholder="Enter your username" style="color: #f1f1f1;"><br>                 
+                    <input type="password" id="in4" placeholder="Enter your password" style="color: #f1f1f1;"><br>
+                    <span id="s2" style="color: red;"></span><br>
+                    <input type="checkbox" onclick="showPass()"> Show password <br><br>
+                    <center><input class="button button1" type="submit" value="login"></center>
+                    <div class="signup">
+                        <p>Don't have an account? <a href="signup.html">Sign Up</a> now!</p>
+                    </div>
+                </form>
+        </div></center>
+    </div>
+    <script>
+        var users = [];
+
+        function add() {
+            var userNameValue = document.getElementById('in1').value;
+            var passValue = document.getElementById('in2').value;
+
+            if (passValue.length < 8) {
+                document.getElementById('s1').innerHTML = 'password must have at least 8 characters';
+            } else {
+                var user = {
+                    username: userNameValue,
+                    password: passValue
+                };
+                users.push(user);
+                console.log(users);
+            }
+        }
+        function showPass(){
+
+var passInput = document.getElementById('in4');
+
+if(passInput.type == 'password'){
+    passInput.type = 'text'
+}else if(passInput.type == 'text'){
+    passInput.type = 'password'
+}
+}
+
+function Signin(){
+
+var userValue = document.getElementById('in3').value;
+var passValue = document.getElementById('in4').value;
+
+if(userValue == ''){
+    document.getElementById('s2').innerHTML = 'remplir username';
+    return false;
+}
+else if(passValue == ''){
+    document.getElementById('s2').innerHTML = 'remplir password';
+    return false;
+}
+for(var i=0; i<users.length;i++){
+    if(userValue == users[i].username && passValue == users[i].password){
+        return true;
+    }
+}
+document.getElementById('s2').innerHTML = 'username and password inccorect';
+        return false;
+}
+
+    </script>
+</body>
+</html>
